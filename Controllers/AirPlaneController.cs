@@ -1,39 +1,19 @@
 using InfluxApp.Models;
 using InfluxApp.Services;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
-
 namespace InfluxApp.Controllers;
 
-/// <summary>
-/// Airplanes altitudes
-/// </summary>
 [ApiController]
-[Route("airplaneAltitudes")]
-[SwaggerTag("Get airplane altitudes. Very weird airplane API :)")]
+[Route("airplane")]
 public class AirPlaneController : ControllerBase
 {
 	private readonly InfluxDBService _service;
-	/// <summary>
-	/// Constructor for Dependency Injection
-	/// </summary>
-	/// <param name="service"></param>
+
 	public AirPlaneController(InfluxDBService service)
 	{
 		_service = service;
 	}
-
-	/// <summary>
-	/// Get a list of altitudes for airplanes with an altitude greater than 3500 from InfluxDB.
-	/// </summary>
-	/// <returns>A list of <see cref="AltitudeModel"/> objects.</returns>
 	[HttpGet("altitudes")]
-	[SwaggerOperation(
-		Summary = "Get a list of altitudes for airplanes with an altitude greater than 3500 from InfluxDB.",
-		Description = "This endpoint will return altitudes of airplanes.",
-		OperationId = "Get",
-		Tags = new[] { "AirplaneAltitudes" })]
-
 	[ProducesResponseType(typeof(IEnumerable<AltitudeModel>), 200)]
 	[ProducesResponseType(typeof(ProblemDetails), 500)]
 	public async Task<IEnumerable<AltitudeModel>> GetAltitudes()
