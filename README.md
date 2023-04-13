@@ -1,12 +1,12 @@
 # InfluxApp
 
-##Introduction
+## Introduction
 InfluxDB is a high-performance, distributed, and scalable database designed for handling large volumes of time-stamped data. It provides an intuitive query language, a user-friendly web interface, and extensive client libraries that enable developers to easily build applications that process real-time data.
 
 ![sample airplane data](./Assets/sample.png)
 
 
-##Features
+## Features
 1. Fast and efficient: InfluxDB is designed to handle high write and query loads, with low-latency performance that scales to meet the demands of large-scale data processing.
 2. Scalable: InfluxDB is built to handle large volumes of data, with a distributed architecture that enables horizontal scaling across multiple nodes.
 3. Time series data handling: InfluxDB is optimized for time series data, with specialized indexing and compression algorithms that enable efficient storage and retrieval of time-stamped data.
